@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>image changer</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+            text-align: center; 
+        }
+        .image_container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .image_container img{
+            text-align: center;
+            height: 400px;            
+            border: 2px solid blue;
+            border-radius: 10px ;
+        }
+        .image_container h2{
+            background-color: yellow;
+            color: rgba(6, 0, 0, 0.958);
+            padding: 10px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Changer</h1>
+    <dic class="image_container">
+        <img src="https://cdn.pixabay.com/photo/2017/01/03/22/00/tower-1950742_1280.jpg" alt="">
+        <h2>Landan</h2>
+    </dic>
+    <script>
+        let img = document.querySelector('img');
+        let h2 = document.querySelector('h2');
+        let previous = img.src;
+        let prevText = h2.innerText;
+
+        img.addEventListener('mouseover' , () =>{
+            img.src='https://cdn.pixabay.com/photo/2020/02/16/20/29/nyc-4854718_1280.jpg';
+            h2.innerText='America';
+        })
+
+         img.addEventListener('mouseleave' , () =>{
+            img.src = previous;
+            h2.innerText = prevText;
+        })
+
+
+    </script>
+</body>
+</html>
